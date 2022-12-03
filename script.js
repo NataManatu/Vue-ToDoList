@@ -29,14 +29,17 @@ const toDo = {
 
     },
     computed: {
-        dubleNoutes(){
+        dubleNoutes() {
             return this.notes.length * 2
         }
 
     },
-    watch:{
-        inputValue(value){
-            console.log("input value ganged",value)
+    watch: {
+        inputValue(value) {
+            if (value.length > 30) {
+                this.inputValue = ""
+            }
+            console.log("input value ganged", value)
         }
     }
 }
